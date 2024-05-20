@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <style>
+            .img{
+                height: 500px;
+                width: 100%;
+                background-size: 100% 100%;
+            }
+        </style>
+
+        <script>
+            var images=[ a.jpg, c.jpg, j.jpg, wy.jpg];
+            var x=0;
+
+            function slider(){
+                imgid.src= images[x];
+                x++;
+                if(x== images.length){
+                    x=0;
+                }
+
+                setTimeout(slider,2000);
+            }
+
+        </script>
+    </head>
+    <body onload="slider()">
+        <img src="a.jpg" alt="img" id="imgid" class="img">
+        
+    </body>
+</html>

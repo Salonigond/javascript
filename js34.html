@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <style>
+            #outer{
+                width: 200px;
+                height: 10px;
+                background: silver;
+                padding: 3px;
+            }
+            #progess{
+                width: 0px;
+                height: 10px;
+                background-color: red;
+                transition: ease 1s all;
+            }
+
+        </style>
+        <script>
+            function togglepassword(){
+                var a= document.getElementById("chk").checked;
+                if(a==true){
+                    document.getElementById("t1").type="text";
+
+                }
+                else{
+                    document.getElementById("t1").type="password";
+                }
+            }
+            function checkpassword(){
+                var pass = t1.value;
+                var score=0;
+                if(pass.match(/[A-Z]/)){
+                    score++;
+
+                }
+                if(pass.match(/[a-z]/)){
+                    score++;
+                    
+                }
+                if(pass.match(/[0-9]/)){
+                    score++;
+                    
+                }
+                if(pass.match(/[@#$%&*]/)){
+                    score++;
+                    
+                }
+                if(pass.length>=8){
+                    score++;
+                    
+                }
+                else if(score==0){
+                    passwordstatus.innerHTML="";
+                    progess.style.width="20%";
+                    progess.style.background= red;    
+                }
+
+                else if(score==1){
+                    passwordstatus.innerHTML="Weak";
+                    progess.style.width="20%";
+                    progess.style.background= "red";    
+                }
+
+                else if(score==2){
+                    passwordstatus.innerHTML="Fair";
+                    progess.style.width="40%";
+                    progess.style.background= "orange";    
+                }
+
+                else if(score==3){
+                    passwordstatus.innerHTML="good";
+                    progess.style.width="60%";
+                    progess.style.background= "blue";    
+                }
+
+                else if(score==4){
+                    passwordstatus.innerHTML="strong";
+                    progess.style.width="80%";
+                    progess.style.background= "yellow";    
+                }
+                else {
+                    passwordstatus.innerHTML="Unbreakable";
+                    progess.style.width="100%";
+                    progess.style.background= "green";    
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        Enter a Password:
+        <input type="password" id="t1" onkeyup="checkpassword()">
+        <input type="checkbox" id="chk" onclick="togglepassword()">
+        <br>
+        Password Strength: <span id="passwordstatus"></span>
+        <br>
+        <div id="outer">
+            <div id="progess"></div>
+        </div>
+        <br>
+        <button>Login</button>
+
+    </body>
+</html>

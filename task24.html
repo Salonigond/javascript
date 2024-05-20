@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function printTable(){
+            var x= document.getElementById("t1").value;
+            x= parseInt(x);
+            
+            for(var y= 1; y<=10; y++){
+                document.getElementById("showtable").innerHTML +=y*x + "<br>";
+
+            }
+        }
+    </script>
+</head>
+<body>
+    Enter a number: <input type="text" id="t1"><br>
+    <button onclick="printTable()">Print Table</button>
+    <hr>
+    <div id="showtable"></div>
+</body>
+</html>

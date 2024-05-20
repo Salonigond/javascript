@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function demo(){
+            var a= document.getElementById("t1").value;
+            document.getElementById("p1").innerHTML=a;
+            //p1.innerHTML=t1.value;
+        }
+    </script>
+</head>
+<body>
+    <textarea id="t1" cols="30" rows="10" onkeyup="demo()"></textarea>
+    <hr>
+    <p id="p1"></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Javascript Arrays</title>
+  <script type="text/Javascript">
+
+var array = [];
+function addtolist(){
+    var x = document.getElementById("fname").value;
+    array[x] = document.getElementById("rNo").value;
+    alert ("Ok, " + x + " added in the class list with roll no. " + array [x]);
+
+    for (var i = 0; i<array.length; i++){
+        document.write("</br>"+ x + ":" + array [x]);
+    }
+}
+
+  </script>
+</head>
+<body>
+  <h1 id= "title">Roll No. Entry</h1>
+  <p1> Enter Roll No. and First Name and Click Submit </p1><br><br>
+  <label for="fname"> First Name: </label><br>
+  <input type="text" id="fname" name="fname"/><br>
+  <label for="rNo"> Roll No: </label><br>
+  <input type="number" id="rNo" name="rNo"/><br><br>
+  <input type="submit" value="Submit" onclick="addtolist()">
+  
+</body>
+</html>

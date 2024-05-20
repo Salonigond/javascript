@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            function getascii(){
+            //var str = document.
+            var str= input.value;
+            for(var i=0; i<str.length; i++){
+                var ascii = str.charCodeAt(i);
+                show.innerHTML += ascii;
+                show.innerHTML += "<br>"
+            }
+        }
+
+        </script>
+    </head>
+    <body>
+        Enter a string: <input type="text" id="input">
+        <button onclick="getascii()">ASCII</button>
+        <br>
+        <p id="show"></p>
+    </body>
+</html>

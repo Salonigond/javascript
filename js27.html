@@ -1,0 +1,23 @@
+<html>
+<head>
+   <style>
+    #box{
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+        margin: 2px;
+        float: left;
+    }
+   </style>
+    <script>
+        function showBox(){
+           for(var a=1; a<=100; a++){
+            mybox.innerHTML+="<div id='box'>" + a + "</div>"; 
+           }
+        }
+    </script>
+</head>
+<body onload="showBox()">
+    <div id="mybox"></div>
+</body>
+</html>

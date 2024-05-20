@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+        #box1{
+         width: 60px;
+         height: 60px; 
+        }
+        #box{
+            font-size: 100px;
+            animation-name: run;
+            animation-timing-function: linear;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes run{
+            0%{
+                transform: translate(1100px, 0px);
+
+            }
+            50%{
+                transform: translate(0px, 0px);
+            }
+            100%{
+                transform: translate(1100px, 0px);
+            }
+        }
+        </style>
+        <script>
+            var a= true;
+            function checkbox(){
+                if(box1.style.transform =="" && a==false){
+                    box1.style.transform = "rotateY(180deg)";
+                    a=true;
+
+                }
+                else{
+                    box1.style.transform="";
+                    a=false;
+                }
+                setTimeout(checkbox, 5000);
+            }
+        
+
+        </script>
+        </head>
+
+    <body onload="checkbox()">
+    <div id="box"> 
+        <div id="box1">🛻</div>
+         </div>
+    </body>
+</html>

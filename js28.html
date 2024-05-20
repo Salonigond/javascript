@@ -1,0 +1,36 @@
+<html>
+<head>
+   <style>
+    #box{
+        height: 100px;
+        width: 100px;
+        background-color: rgb(91, 211, 72);
+        margin: 2px;
+        float: left;
+    }
+   </style>
+    <script>
+        var color= ["pink","blue","yellow","green","red"];
+        var x=0;
+        var y=1;
+
+        function showBox(){
+            mybox.innerHTML+="<div id='box' style=background-color:"+ color[x] +" ;>" + y + "</div>"; 
+            x++;
+
+            if(x== color.length){
+                x=0;
+
+            }
+
+            if(y<=99){
+                y++;
+                setTimeout(showBox,100);
+            }
+        }
+    </script>
+</head>
+<body onload="showBox()">
+    <div id="mybox"></div>
+</body>
+</html>

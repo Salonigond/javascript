@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style>
+            #box{
+                height: 150px;
+                width: 250px;
+                background-image: url(https://www.codeproject.com/KB/scripting/CreateCaptcha/1.JPG);
+                font-size: 50px;
+                color: black;
+                text-align: center;
+                line-height: 150px;
+                text-decoration: line-through;
+            }
+        </style>
+        <script>
+            function getRandomeNum(min,max){
+                var x= Math.random();
+                x =x * (max - min)+ min;
+                x =Math.floor(x);
+                return x;
+            }
+
+            function getCaptch(){
+                var spl = "@$&"
+                var num = getRandomeNum(0,9);
+                var a = String.fromCharCode(getRandomeNum(65,90));
+                var b = String.fromCharCode(getRandomeNum(96,122));
+                var c = spl.charAt(getRandomeNum(0, spl.length - 1));
+                var d = String.fromCharCode(getRandomeNum(65,90));
+                var e = String.fromCharCode(getRandomeNum(65,90));
+                var cap = num + a + b + c +d+e;
+                box.innerHTML = cap;
+
+            }
+            function match(){
+                var a= box.innerText;
+                var b= document.getElementById("cp").value;
+                if(a==b){
+                    alert("Match");
+                }
+                else{
+                    alert("Not Match");
+                }
+            }
+
+        </script>
+    </head>
+    <body onload="getCaptch()">
+        <h1>CAPTCHA GENERATOR</h1>
+        <div id="box"></div>
+        <button onclick="getCaptch()">&#8635</button>
+        <hr>
+        <input type="text" id="cp" placeholder="Enter a captcha">
+        <button onclick="match()">Match</button>
+        
+    </body>
+</html>
